@@ -45,6 +45,8 @@ const Disclaimer = styled.div`
     text-align: right;
 
     & > span {
+        display: inline-block;
+        margin-bottom: 0.25rem;
         white-space: nowrap;
     }
 `;
