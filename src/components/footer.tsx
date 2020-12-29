@@ -17,14 +17,20 @@ const FooterContainer = styled.div`
 `;
 
 const SiteLinks = styled.div`
-    width: 40%;
-    height: 50%;
+    width: 50%;
+    /* height: 50%; */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 
     & > a {
         margin-bottom: 0.25rem;
+    }
+
+    @media (min-width: 600px) {
+        & > a:nth-child(2n) {
+            flex-basis: 50%;
+        }
     }
 `;
 
@@ -35,8 +41,12 @@ const Contacts = styled.div`
     align-items: flex-end;
 `;
 
-const Disclaimer = styled.span`
+const Disclaimer = styled.div`
     text-align: right;
+
+    & > span {
+        white-space: nowrap;
+    }
 `;
 
 const SocialLinks = styled.div`
@@ -65,16 +75,21 @@ export const Footer: React.FC = () => {
             </SiteLinks>
             <Contacts>
                 <Disclaimer>
-                    {`${String.fromCharCode(
-                        169
-                    )} ${date.getFullYear()} Marcus Wassén. License: `}
-                    <a
-                        href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        CC BY-NC-SA 4.0.
-                    </a>
+                    <span>
+                        {`${String.fromCharCode(
+                            169
+                        )} ${date.getFullYear()} Marcus Wassén. `}
+                    </span>{" "}
+                    <span>
+                        {`License: `}
+                        <a
+                            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            CC BY-NC-SA 4.0.
+                        </a>
+                    </span>
                 </Disclaimer>
                 <SocialLinks>
                     <a
