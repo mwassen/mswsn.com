@@ -17,8 +17,7 @@ const FooterContainer = styled.div`
 `;
 
 const SiteLinks = styled.div`
-    width: 50%;
-    /* height: 50%; */
+    width: 35%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -28,7 +27,7 @@ const SiteLinks = styled.div`
     }
 
     @media (min-width: 600px) {
-        & > a:nth-child(2n) {
+        & > a:nth-of-type(2n) {
             flex-basis: 50%;
         }
     }
