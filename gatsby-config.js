@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: "mswsn - Marcus Wassén",
+        title: "mswsn // Marcus Wassén",
         siteUrl: "https://www.mswsn.com",
         description:
             "Portfolio of Marcus Wassén, front-end developer based in Gothenburg, Sweden."
