@@ -73,6 +73,16 @@ export const GlobalStyles: React.FC = () => {
                     font-size: 1rem;
                     line-height: 1.75rem;
                 }
+
+                a {
+                    color: var(--color-text);
+                    text-decoration-thickness: 0.06rem;
+                    text-underline-offset: 0.2rem;
+
+                    &:hover {
+                        opacity: 0.85;
+                    }
+                }
             `}
         />
     );
