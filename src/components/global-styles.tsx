@@ -1,5 +1,6 @@
 import React from "react";
 import { Global, css, useTheme } from "@emotion/react";
+import "../assets/fonts/font-faces.css";
 
 export const GlobalStyles: React.FC = () => {
     const theme = useTheme();
@@ -7,26 +8,6 @@ export const GlobalStyles: React.FC = () => {
     return (
         <Global
             styles={css`
-                @font-face {
-                    font-family: "Manrope";
-                    font-weight: "normal";
-                    src: local("Manrope"),
-                        url("../assets/fonts/Manrope-Regular.woff2")
-                            format("woff2"),
-                        url("../assets/fonts/Manrope-Regular.woff")
-                            format("woff");
-                }
-
-                @font-face {
-                    font-family: "Manrope";
-                    font-weight: "bold";
-                    src: local("Manrope"),
-                        url("../assets/fonts/Manrope-SemiBold.woff2")
-                            format("woff2"),
-                        url("../assets/fonts/Manrope-SemiBold.woff")
-                            format("woff");
-                }
-
                 html {
                     height: 100%;
                     background-color: ${theme.colors.accent};
