@@ -1,49 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import { PageProps } from "gatsby";
 import { Header } from "./header";
+import { Footer } from "./footer";
 import { GlobalStyles } from "./global-styles";
 import styled from "@emotion/styled";
 
 // Styles
-const FlexContainer = styled.div`
-    width: 100%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+const theme = {
+    colors: {
+        accent: "#e36414"
+    },
+    margins: {
+        base: "2rem"
+    }
+};
+
+const Grid = styled.div`
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 42rem) 1fr;
+    grid-template-rows: 4px 8rem auto 8rem;
+    gap: ${(props) => props.theme.margins.base};
 `;
 
-const SiteContainer = styled.div`
-    width: 100%;
-    max-width: 42rem;
+const Bar = styled.div`
+    grid-column: 1 / 4;
+    grid-row: 1;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background-color: ${(props) => props.theme.colors.accent};
 `;
 
-const themeLight = {
-    colors: { background: "#F9F9F9", text: "#222", accent: "#b5179e" }
-};
-const themeDark = {
-    colors: { background: "#121212", text: "#FAFAFA", accent: "#b5179e" }
-};
+const Content = styled.div`
+    grid-column: 2;
+`;
 
 // Markup
 const LayoutWrapper: React.FC<PageProps> = ({ children }) => {
-    const [isDark, setIsDark] = useState<boolean>(false);
-
-    useEffect(() => {
-        setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
-    }, [isDark]);
-
     return (
-        <ThemeProvider theme={isDark ? themeDark : themeLight}>
+        <ThemeProvider theme={theme}>
             <GlobalStyles />
-            <FlexContainer>
-                <SiteContainer>
-                    <Header />
+            <Grid>
+                <Bar />
+                <Header />
 
-                    {children}
-                </SiteContainer>
-            </FlexContainer>
+                <Content>{children}</Content>
+                <Footer />
+            </Grid>
         </ThemeProvider>
     );
 };

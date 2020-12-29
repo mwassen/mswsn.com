@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: "mswsn // Marcus Wassén",
+        title: "mswsn // marcus wassén",
         siteUrl: "https://www.mswsn.com",
         description:
             "Portfolio of Marcus Wassén, front-end developer based in Gothenburg, Sweden."
@@ -22,7 +22,7 @@ module.exports = {
             }
         },
         {
-            resolve: `gatsby-plugin-mdx`,
+            resolve: "gatsby-plugin-mdx",
             options: {
                 defaultLayouts: {
                     default: require.resolve(
