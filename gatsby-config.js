@@ -21,6 +21,7 @@ module.exports = {
                 icon: "src/assets/images/icon.png"
             }
         },
+        `gatsby-remark-images`,
         {
             resolve: "gatsby-plugin-mdx",
             options: {
@@ -28,7 +29,17 @@ module.exports = {
                     default: require.resolve(
                         "./src/components/layout-wrapper.tsx"
                     )
-                }
+                },
+                gatsbyRemarkPlugins: [
+                    {
+                        resolve: `gatsby-remark-images`,
+                        options: {
+                            maxWidth: 1200,
+                            withWebp: true,
+                            linkImagesToOriginal: false
+                        }
+                    }
+                ]
             }
         },
         "gatsby-transformer-sharp",
