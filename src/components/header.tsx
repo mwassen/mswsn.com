@@ -11,9 +11,9 @@ const NavBar = styled.div`
     height: 100%;
     /* margin: 3rem 0 1rem; */
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
 
     @media (min-width: 600px) {
         flex-direction: row;
@@ -36,13 +36,23 @@ const Logo = styled(LogoSvg)`
     width: 160px;
 `;
 
-const Links = styled.div``;
+const Links = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-bottom: ${(props) => props.theme.margins.base};
+
+    @media (min-width: 600px) {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+`;
 
 const TopLink = styled(Link)`
     text-decoration: none;
-    text-transform: lowercase;
+    text-transform: uppercase;
+    font-size: 14px;
     font-weight: bold;
-    letter-spacing: 1.6px;
+    letter-spacing: 1.8px;
     margin: 0 ${(props) => props.theme.margins.base} 0 0;
     color: ${(props) => props.theme.colors.accent};
 
