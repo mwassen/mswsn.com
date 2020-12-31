@@ -1,14 +1,13 @@
-const React = require("react");
-
+import React from "react";
 // Dark-mode implementation from https://victorzhou.com/blog/dark-mode-gatsby/
-exports.onRenderBody = ({ setHeadComponents }) => {
-    setHeadComponents([
+export const onRenderBody = ({ setPreBodyComponents }) => {
+    setPreBodyComponents([
         <script
+            type="text/javascript"
             dangerouslySetInnerHTML={{
                 __html: `(function () {
                     function setTheme(theme) {
                         window.__theme = theme;
-                        console.log("Theme updated:", theme);
                         if (theme === "dark") {
                             document.documentElement.className = "dark";
                         } else {

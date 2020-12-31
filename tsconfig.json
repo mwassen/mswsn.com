@@ -8,8 +8,14 @@
         "noEmit": true,
         "isolatedModules": true,
         "esModuleInterop": true,
-        "noUnusedLocals": false
+        "noUnusedLocals": false,
+        "jsxImportSource": "@emotion/react"
     },
-    "include": ["src/components", "src/typescript/custom.d.ts", "src/typescript/emotion.d.ts"],
+
+    "include": [
+        "src/components",
+        "src/typescript/custom.d.ts",
+        "src/typescript/emotion.d.ts"
+    ],
     "exclude": ["node_modules", "public", ".cache"]
 }

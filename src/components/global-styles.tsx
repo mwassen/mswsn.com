@@ -36,6 +36,7 @@ export const GlobalStyles: React.FC = () => {
                     margin: 0;
                     min-width: fit-content;
                     background-color: var(--color-background);
+                    /* transition: background-color 2s; */
                     color: var(--color-text);
                     font-family: "Manrope", Helvetica, Arial, sans-serif;
                 }
@@ -56,14 +57,14 @@ export const GlobalStyles: React.FC = () => {
 
                 /* Light Mode */
                 :root {
-                    --color-background: #f2f2f2;
-                    --color-text: #333;
+                    --color-background: ${theme.colors.light.background};
+                    --color-text: ${theme.colors.light.text};
                 }
 
                 /* Dark Mode */
                 :root.dark {
-                    --color-background: #121212;
-                    --color-text: #fafafa;
+                    --color-background: ${theme.colors.dark.background};
+                    --color-text: ${theme.colors.dark.text};
                 }
 
                 p {

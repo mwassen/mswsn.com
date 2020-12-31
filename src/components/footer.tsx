@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
-import GithubLogo from "../assets/svg/github-logo.svg";
-import TwitterLogo from "../assets/svg/twitter-logo.svg";
+import { ModeSwitch } from "./mode-switch";
 
 // Styles
 const FooterContainer = styled.div`
@@ -50,18 +49,6 @@ const Disclaimer = styled.div`
     }
 `;
 
-const SocialLinks = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    & > * > * {
-        fill: var(--color-text);
-        width: 1.2rem;
-        margin: 0.5rem;
-    }
-`;
-
 // Markup
 export const Footer: React.FC = () => {
     const date = new Date();
@@ -79,35 +66,21 @@ export const Footer: React.FC = () => {
                     <span>
                         {`${String.fromCharCode(
                             169
-                        )} ${date.getFullYear()} Marcus Wassén. `}
+                        )} ${date.getFullYear()} Marcus Wassén.`}
                     </span>{" "}
                     <span>
-                        {`License: `}
+                        {"License: "}
                         <a
                             href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                             target="_blank"
                             rel="noreferrer"
                         >
-                            CC BY-NC-SA 4.0.
+                            CC BY-NC-SA 4.0
                         </a>
+                        {"."}
                     </span>
                 </Disclaimer>
-                <SocialLinks>
-                    <a
-                        href="https://github.com/mwassen"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <GithubLogo />
-                    </a>
-                    <a
-                        href="https://twitter.com/marcuswassen"
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <TwitterLogo />
-                    </a>
-                </SocialLinks>
+                <ModeSwitch />
             </Contacts>
         </FooterContainer>
     );

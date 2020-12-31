@@ -9,10 +9,18 @@ import styled from "@emotion/styled";
 // Styles
 const theme = {
     colors: {
-        accent: "#e36414"
+        accent: "#e36414",
+        light: {
+            background: "#f2f2f2",
+            text: "#333"
+        },
+        dark: {
+            background: "#121212",
+            text: "#fafafa"
+        }
     },
     margins: {
-        base: "2rem"
+        base: "1rem"
     }
 };
 
@@ -21,7 +29,7 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr minmax(auto, 42rem) 1fr;
     grid-template-rows: 4px 8rem auto 8rem;
-    gap: ${(props) => props.theme.margins.base};
+    gap: 2rem ${(props) => props.theme.margins.base};
 `;
 
 const Bar = styled.div`
