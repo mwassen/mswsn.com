@@ -55,6 +55,7 @@ const TopLink = styled(Link)`
     letter-spacing: 1.8px;
     margin: 0 ${(props) => props.theme.margins.base} 0 0;
     color: ${(props) => props.theme.colors.accent};
+    user-select: none;
 
     @media (min-width: 600px) {
         margin: 0 0 0 ${(props) => props.theme.margins.base};
