@@ -1,5 +1,11 @@
 import React from "react";
-// Dark-mode implementation from https://victorzhou.com/blog/dark-mode-gatsby/
+
+/* 
+    Dark-mode implementation from: 
+    https://victorzhou.com/blog/dark-mode-gatsby/ 
+    https://gist.github.com/kaicataldo/f28b6adf941d1575afa78e647624a327 
+*/
+
 export const onRenderBody = ({ setPreBodyComponents }) => {
     setPreBodyComponents([
         <script
