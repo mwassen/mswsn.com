@@ -8,6 +8,7 @@
         "develop": "gatsby develop",
         "start": "gatsby develop",
         "build": "gatsby build",
+        "preserve": "gatsby build",
         "serve": "gatsby serve",
         "clean": "gatsby clean"
     },
@@ -34,6 +35,7 @@
         "react-spring": "^8.0.27"
     },
     "devDependencies": {
+        "@types/react-helmet": "^6.1.0",
         "@typescript-eslint/eslint-plugin": "^4.11.1",
         "@typescript-eslint/parser": "^4.11.1",
         "eslint": "^7.16.0",

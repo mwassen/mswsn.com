@@ -1,9 +1,12 @@
 module.exports = {
     siteMetadata: {
         title: "mswsn // marcus wassén",
+        titleTemplate: "%s · mswsn",
         siteUrl: "https://www.mswsn.com",
         description:
-            "Portfolio of Marcus Wassén, front-end developer based in Gothenburg, Sweden."
+            "Portfolio of Marcus Wassén, front-end developer based in Gothenburg, Sweden.",
+        image: "",
+        twitterUsername: "@marcuswassen"
     },
     plugins: [
         "gatsby-plugin-emotion",
