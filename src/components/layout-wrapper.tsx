@@ -1,10 +1,13 @@
 import React from "react";
 import { ThemeProvider } from "@emotion/react";
+import styled from "@emotion/styled";
+import { MDXProvider } from "@mdx-js/react";
+import { MDXComponents } from "./mdx-components";
 import { PageProps } from "gatsby";
+import { SEO } from "./seo";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { GlobalStyles } from "./global-styles";
-import styled from "@emotion/styled";
 
 // Styles
 const theme = {
@@ -49,14 +52,17 @@ const Content = styled.div`
 const LayoutWrapper: React.FC<PageProps> = ({ children }) => {
     return (
         <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            <Grid>
-                <Bar />
-                <Header />
+            <MDXProvider components={MDXComponents}>
+                <GlobalStyles />
+                <SEO />
+                <Grid>
+                    <Bar />
+                    <Header />
 
-                <Content>{children}</Content>
-                <Footer />
-            </Grid>
+                    <Content>{children}</Content>
+                    <Footer />
+                </Grid>
+            </MDXProvider>
         </ThemeProvider>
     );
 };
