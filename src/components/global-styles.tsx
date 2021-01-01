@@ -20,7 +20,7 @@ export const GlobalStyles: React.FC = () => {
                     margin: 0;
                     min-width: fit-content;
                     background-color: var(--color-background);
-                    /* transition: background-color 2s; */
+                    transition: none;
                     color: var(--color-text);
                     font-family: "Manrope", Helvetica, Arial, sans-serif;
                 }
@@ -51,6 +51,10 @@ export const GlobalStyles: React.FC = () => {
                     --color-text: ${theme.colors.dark.text};
                 }
 
+                h1 {
+                    font-size: 1.5rem;
+                }
+
                 p {
                     font-size: 1rem;
                     line-height: 1.75rem;
@@ -64,6 +68,10 @@ export const GlobalStyles: React.FC = () => {
                     &:hover {
                         opacity: 0.85;
                     }
+                }
+
+                ::selection {
+                    background: ${theme.colors.accent};
                 }
             `}
         />

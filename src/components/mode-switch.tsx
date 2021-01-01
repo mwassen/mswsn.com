@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { animated, useSpring } from "react-spring";
 import styled from "@emotion/styled";
 import { css, useTheme } from "@emotion/react";
@@ -60,6 +60,10 @@ export const ModeSwitch: React.FC = () => {
     if (typeof window === "undefined") {
         return null;
     }
+    useEffect(() => {
+        document.body.style.transition =
+            "background-color 600ms cubic-bezier(0.2, 0.8, 0.2, 1)";
+    }, []);
 
     const [isDark, setIsDark] = useState<boolean>(
         (window as any).__theme === "dark"
