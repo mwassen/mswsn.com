@@ -87,7 +87,6 @@ const MarkdownLayout: React.FC<MarkdownLayoutProps> = ({ data }) => {
                     <Header />
                     <Content>
                         <MDXRenderer>{data.mdx.body}</MDXRenderer>
-                        <div>{JSON.stringify(data)}</div>
                     </Content>
                     <Footer />
                 </Grid>
