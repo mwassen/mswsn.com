@@ -60,15 +60,15 @@ export const ModeSwitch: React.FC = () => {
     if (typeof window === "undefined") {
         return null;
     }
-    useEffect(() => {
-        document.body.style.transition =
-            "background-color 600ms cubic-bezier(0.2, 0.8, 0.2, 1)";
-    }, []);
 
     const [isDark, setIsDark] = useState<boolean>(
         (window as any).__theme === "dark"
     );
     const theme = useTheme();
+    useEffect(() => {
+        document.body.style.transition =
+            "background-color 600ms cubic-bezier(0.2, 0.8, 0.2, 1)";
+    }, []);
 
     // Animations
     const handleAnimation = useSpring({
