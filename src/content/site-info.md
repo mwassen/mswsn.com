@@ -7,5 +7,3 @@ The source code can be found on [Github](https://github.com/mwassen/mswsn.com).
 ## Typography
 
 The typeface used on the site is [Manrope](https://manropefont.com/).
-
-[[Dave]] plain doesn't know the deal
