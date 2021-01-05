@@ -79,18 +79,18 @@ export const query = graphql`
 const MarkdownLayout: React.FC<MarkdownLayoutProps> = ({ data }) => {
     return (
         <ThemeProvider theme={theme}>
-            <MDXProvider components={MDXComponents}>
-                <GlobalStyles />
-                <SEO />
-                <Grid>
-                    <Bar />
-                    <Header />
-                    <Content>
+            <GlobalStyles />
+            <SEO />
+            <Grid>
+                <Bar />
+                <Header />
+                <Content>
+                    <MDXProvider components={MDXComponents}>
                         <MDXRenderer>{data.mdx.body}</MDXRenderer>
-                    </Content>
-                    <Footer />
-                </Grid>
-            </MDXProvider>
+                    </MDXProvider>
+                </Content>
+                <Footer />
+            </Grid>
         </ThemeProvider>
     );
 };
