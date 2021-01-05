@@ -2,12 +2,22 @@ import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import { MDXProvider } from "@mdx-js/react";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXComponents } from "./mdx-components";
-import { PageProps } from "gatsby";
+import { graphql } from "gatsby";
 import { SEO } from "./seo";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { GlobalStyles } from "./global-styles";
+
+// Interfaces
+interface MarkdownLayoutProps {
+    data: {
+        mdx: {
+            body: string;
+        };
+    };
+}
 
 // Styles
 const theme = {
@@ -48,8 +58,17 @@ const Content = styled.div`
     grid-column: 2;
 `;
 
+// Queries
+export const query = graphql`
+    query MDXQuery($id: String!) {
+        mdx(id: { eq: $id }) {
+            body
+        }
+    }
+`;
+
 // Markup
-const LayoutWrapper: React.FC<PageProps> = ({ children }) => {
+const MarkdownLayout: React.FC<MarkdownLayoutProps> = ({ data }) => {
     return (
         <ThemeProvider theme={theme}>
             <MDXProvider components={MDXComponents}>
@@ -58,8 +77,9 @@ const LayoutWrapper: React.FC<PageProps> = ({ children }) => {
                 <Grid>
                     <Bar />
                     <Header />
-
-                    <Content>{children}</Content>
+                    <Content>
+                        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+                    </Content>
                     <Footer />
                 </Grid>
             </MDXProvider>
@@ -67,4 +87,4 @@ const LayoutWrapper: React.FC<PageProps> = ({ children }) => {
     );
 };
 
-export default LayoutWrapper;
+export default MarkdownLayout;

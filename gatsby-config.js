@@ -24,15 +24,9 @@ module.exports = {
                 icon: "src/assets/images/icon.png"
             }
         },
-        `gatsby-remark-images`,
         {
             resolve: "gatsby-plugin-mdx",
             options: {
-                defaultLayouts: {
-                    default: require.resolve(
-                        "./src/components/layout-wrapper.tsx"
-                    )
-                },
                 gatsbyRemarkPlugins: [
                     {
                         resolve: `gatsby-remark-images`,
@@ -40,6 +34,18 @@ module.exports = {
                             maxWidth: 1200,
                             withWebp: true,
                             linkImagesToOriginal: false
+                            // duotone: {
+                            //     highlight: "#0ec4f1",
+                            //     shadow: "#192550",
+                            //     opacity: 50
+                            // }
+                        }
+                    },
+                    {
+                        resolve: "gatsby-remark-double-brackets-link",
+                        options: {
+                            titleToURLPath: `${__dirname}/src/helpers/resolve-url.js`,
+                            stripBrackets: true
                         }
                     }
                 ]
@@ -50,17 +56,17 @@ module.exports = {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "images",
-                path: "./src/assets/images/"
+                path: `${__dirname}/src/assets/images/`
             },
             __key: "images"
         },
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                name: "pages",
-                path: "./src/pages/"
+                name: "content",
+                path: `${__dirname}/src/content/`
             },
-            __key: "pages"
+            __key: "content"
         },
         {
             resolve: "gatsby-plugin-react-svg",
@@ -82,6 +88,19 @@ module.exports = {
                 }
             }
         },
-        "gatsby-plugin-mdx-embed"
+        "gatsby-plugin-catch-links",
+        "gatsby-plugin-mdx-embed",
+        {
+            resolve: "gatsby-transformer-markdown-references",
+            options: {
+                types: ["Mdx"] // or ['RemarkMarkdown'] (or both)
+            }
+        }
+        // {
+        //     resolve: "gatsby-plugin-graphql-codegen",
+        //     options: {
+        //         fileName: "./src/typescript/gatsby-graphql.ts"
+        //     }
+        // }
     ]
 };
