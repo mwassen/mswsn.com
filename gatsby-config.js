@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: "mswsn // marcus wassén",
-        titleTemplate: "%s · mswsn",
+        title: "marcus wassén",
+        titleTemplate: "%s // mswsn",
         siteUrl: "https://www.mswsn.com",
         description:
             "Portfolio of Marcus Wassén, front-end developer based in Gothenburg, Sweden.",
@@ -86,16 +86,15 @@ module.exports = {
         },
         "gatsby-plugin-catch-links",
         "gatsby-plugin-mdx-embed",
+        {
+            resolve: "gatsby-plugin-graphql-codegen",
+            options: {
+                fileName: "./typescript/gatsby-graphql.d.ts"
+            }
+        },
 
         // Transformers
         "gatsby-transformer-sharp",
         "gatsby-transformer-markdown-references"
-
-        // {
-        //     resolve: "gatsby-plugin-graphql-codegen",
-        //     options: {
-        //         fileName: "./src/typescript/gatsby-graphql.ts"
-        //     }
-        // }
     ]
 };
