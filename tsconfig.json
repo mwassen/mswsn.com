@@ -11,6 +11,6 @@
         "noUnusedLocals": false,
         "jsxImportSource": "@emotion/react"
     },
-    "include": ["src/components", "src/templates", "src/typescript/*"],
+    "include": ["src/components", "typescript/*"],
     "exclude": ["node_modules", "public", ".cache"]
 }
