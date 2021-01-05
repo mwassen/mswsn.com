@@ -1,2 +1,2 @@
 const slugify = require("slugify");
-module.exports = (title) => `/${slugify(title.toLowerCase())}`;
+module.exports = (title) => `/${slugify(title)}`;
