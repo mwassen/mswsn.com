@@ -5,8 +5,8 @@ import { useStaticQuery, graphql } from "gatsby";
 
 export const SEO: React.FC<{
     title?: string;
-    description?: string;
-    image?: string;
+    description?: string | null;
+    image?: string | null;
     article?: boolean;
 }> = ({ title, description, image, article }) => {
     const { pathname } = useLocation();
