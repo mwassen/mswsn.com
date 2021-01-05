@@ -3,12 +3,12 @@ import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { MDXComponents } from "./mdx-components";
+import { MDXComponents } from "../components/mdx-components";
 import { graphql } from "gatsby";
-import { SEO } from "./seo";
-import { Header } from "./header";
-import { Footer } from "./footer";
-import { GlobalStyles } from "./global-styles";
+import { SEO } from "../components/seo";
+import { Header } from "../components/header";
+import { Footer } from "../components/footer";
+import { GlobalStyles } from "../components/global-styles";
 
 // Interfaces
 interface MarkdownLayoutProps {
@@ -63,6 +63,14 @@ export const query = graphql`
     query MDXQuery($id: String!) {
         mdx(id: { eq: $id }) {
             body
+            inboundReferences {
+                ... on Mdx {
+                    frontmatter {
+                        title
+                    }
+                    slug
+                }
+            }
         }
     }
 `;
@@ -79,6 +87,7 @@ const MarkdownLayout: React.FC<MarkdownLayoutProps> = ({ data }) => {
                     <Header />
                     <Content>
                         <MDXRenderer>{data.mdx.body}</MDXRenderer>
+                        <div>{JSON.stringify(data)}</div>
                     </Content>
                     <Footer />
                 </Grid>

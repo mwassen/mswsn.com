@@ -2,7 +2,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions;
 
     const markdownTemplate = require.resolve(
-        `${__dirname}/src/components/markdown-layout.tsx`
+        `${__dirname}/src/templates/markdown-layout.tsx`
     );
 
     const result = await graphql(`
@@ -28,7 +28,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             path: `/${node.slug}`,
             component: markdownTemplate,
             context: {
-                // additional data can be passed via context
                 id: node.id,
                 slug: node.slug
             }
