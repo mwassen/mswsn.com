@@ -2,7 +2,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions;
 
     const markdownTemplate = require.resolve(
-        `${__dirname}/src/templates/markdown-layout.tsx`
+        `${__dirname}/src/components/markdown-layout.tsx`
     );
 
     const result = await graphql(`
