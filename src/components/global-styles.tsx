@@ -53,6 +53,20 @@ export const GlobalStyles: React.FC = () => {
 
                 h1 {
                     font-size: 1.5rem;
+                    border-bottom: 2px dotted var(--color-text);
+                }
+
+                h2 {
+                    font-size: 1rem;
+                    padding: 0 2rem;
+                    /* text-transform: uppercase; */
+                    width: max-content;
+                    color: var(--color-background);
+                    background: var(--color-text);
+                    /* 
+                    ::before {
+                        content: "// ";
+                    } */
                 }
 
                 p {
