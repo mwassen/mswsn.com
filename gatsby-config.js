@@ -17,6 +17,7 @@ module.exports = {
         //   },
         // },
         "gatsby-plugin-sharp",
+
         "gatsby-plugin-react-helmet",
         {
             resolve: "gatsby-plugin-manifest",
@@ -27,6 +28,7 @@ module.exports = {
         {
             resolve: "gatsby-plugin-mdx",
             options: {
+                extensions: [".mdx", ".md"],
                 gatsbyRemarkPlugins: [
                     {
                         resolve: `gatsby-remark-images`,
@@ -34,11 +36,6 @@ module.exports = {
                             maxWidth: 1200,
                             withWebp: true,
                             linkImagesToOriginal: false
-                            // duotone: {
-                            //     highlight: "#0ec4f1",
-                            //     shadow: "#192550",
-                            //     opacity: 50
-                            // }
                         }
                     },
                     {
@@ -51,7 +48,6 @@ module.exports = {
                 ]
             }
         },
-        "gatsby-transformer-sharp",
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -90,12 +86,11 @@ module.exports = {
         },
         "gatsby-plugin-catch-links",
         "gatsby-plugin-mdx-embed",
-        {
-            resolve: "gatsby-transformer-markdown-references",
-            options: {
-                types: ["Mdx"] // or ['RemarkMarkdown'] (or both)
-            }
-        }
+
+        // Transformers
+        "gatsby-transformer-sharp",
+        "gatsby-transformer-markdown-references"
+
         // {
         //     resolve: "gatsby-plugin-graphql-codegen",
         //     options: {

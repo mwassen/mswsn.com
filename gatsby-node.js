@@ -7,11 +7,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     const result = await graphql(`
         {
-            allMdx {
+            allFile {
                 edges {
                     node {
-                        id
-                        slug
+                        childMdx {
+                            id
+                            slug
+                        }
                     }
                 }
             }
@@ -23,14 +25,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         return;
     }
 
-    result.data.allMdx.edges.forEach(({ node }) => {
-        createPage({
-            path: `/${node.slug}`,
-            component: markdownTemplate,
-            context: {
-                id: node.id,
-                slug: node.slug
-            }
-        });
+    result.data.allFile.edges.forEach(({ node }) => {
+        if (node.childMdx) {
+            createPage({
+                path: `/${node.childMdx.slug}`,
+                component: markdownTemplate,
+                context: {
+                    id: node.childMdx.id,
+                    slug: node.childMdx.slug
+                }
+            });
+        }
     });
 };
