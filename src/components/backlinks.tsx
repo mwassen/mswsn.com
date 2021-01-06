@@ -4,26 +4,33 @@ import { Mdx } from "../../typescript/gatsby-graphql";
 import { Link } from "gatsby";
 
 const Container = styled.div`
-    font-size: 14px;
-    text-align: right;
-    margin: 0;
+    width: 50%;
+    padding-top: 1rem;
 
-    h4 {
-        margin-bottom: 0.5rem;
+    &::before {
+        content: "";
+        border-top: 1.15px solid var(--color-text);
+        height: 0.25rem;
+        width: 50px;
+        display: block;
+    }
+
+    * {
+        font-size: ${(props) => props.theme.type.scale[6]};
+        margin: 0;
+        display: inline;
     }
 `;
 
 export const Backlinks: React.FC<{ references: Mdx[] }> = ({ references }) => {
     return (
         <Container>
-            <h4>Referenced in:</h4>
+            <p>Referenced in: </p>
             {references.map((link, ind) => (
-                <>
-                    <Link to={`/${link.slug}`} key={`backlink-${ind}`}>
-                        {link.frontmatter?.title}
-                    </Link>
+                <div key={`backlink-${ind}`}>
+                    <Link to={`/${link.slug}`}>{link.frontmatter?.title}</Link>
                     {ind + 1 < references.length ? "," : "."}
-                </>
+                </div>
             ))}
         </Container>
     );
