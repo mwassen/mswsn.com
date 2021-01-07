@@ -113,6 +113,7 @@ export const ModeSwitch: React.FC = () => {
                     });
                 }, 250);
             }}
+            aria-label={isDark ? "Light mode" : "Dark mode"}
         >
             <animated.div css={handleCss} style={handleAnimation} />
             <Inner>
