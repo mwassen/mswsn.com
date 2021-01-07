@@ -55,7 +55,7 @@ const Grid = styled.div`
     gap: 3rem ${(props) => props.theme.margins.base};
 `;
 
-const Bar = styled.header`
+const Bar = styled.div`
     grid-column: 1 / 4;
     grid-row: 1;
     position: sticky;
