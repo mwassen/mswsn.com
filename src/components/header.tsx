@@ -66,7 +66,7 @@ const TopLink = styled(Link)`
 export const Header: React.FC = () => {
     return (
         <NavBar>
-            <Home to="/">
+            <Home to="/" aria-label="Home">
                 <Logo />
             </Home>
             <Links>
