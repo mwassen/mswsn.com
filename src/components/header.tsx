@@ -11,9 +11,9 @@ const NavBar = styled.nav`
     height: 100%;
     /* margin: 3rem 0 1rem; */
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: flex-end;
 
     @media (min-width: 600px) {
         flex-direction: row;
@@ -35,16 +35,15 @@ const Logo = styled(LogoSvg)`
     fill: var(--color-text);
     transition: fill ${(props) => props.theme.animations.hover};
     height: ${(props) => props.theme.type.scale[3]};
+    margin-bottom: ${(props) => props.theme.margins.base};
 `;
 
 const Links = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-bottom: ${(props) => props.theme.margins.base};
+    display: none;
+    flex-direction: row;
 
     @media (min-width: 600px) {
-        flex-direction: row;
-        margin-bottom: 0;
+        display: flex;
     }
 `;
 
