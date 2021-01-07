@@ -9,7 +9,7 @@ import DarkSvg from "../assets/svg/dark-mode.svg";
 const SwitchButton = styled.button`
     border: 0;
     padding: 0;
-    margin: 0.25rem 0;
+    margin: 0.15rem 0;
     min-width: 32px;
     height: 16px;
     border-radius: 100px;
@@ -65,9 +65,11 @@ export const ModeSwitch: React.FC = () => {
         (window as any).__theme === "dark"
     );
     const theme = useTheme();
+
     useEffect(() => {
-        document.body.style.transition =
-            "background-color 600ms cubic-bezier(0.2, 0.8, 0.2, 1)";
+        setTimeout(() => {
+            document.body.style.transition = `background-color 600ms cubic-bezier(0.2, 0.8, 0.2, 1), color ${theme.animations.hover}`;
+        }, 0);
     }, []);
 
     // Animations

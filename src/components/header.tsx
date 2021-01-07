@@ -33,7 +33,8 @@ const Home = styled(Link)`
 
 const Logo = styled(LogoSvg)`
     fill: var(--color-text);
-    width: 160px;
+    transition: fill ${(props) => props.theme.animations.hover};
+    height: ${(props) => props.theme.type.scale[3]};
 `;
 
 const Links = styled.div`
@@ -50,19 +51,14 @@ const Links = styled.div`
 const TopLink = styled(Link)`
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: ${(props) => props.theme.type.scale[6]};
     font-weight: bold;
     letter-spacing: 1.8px;
     margin: 0 ${(props) => props.theme.margins.base} 0 0;
-    color: ${(props) => props.theme.colors.accent};
     user-select: none;
 
     @media (min-width: 600px) {
         margin: 0 0 0 ${(props) => props.theme.margins.base};
-    }
-
-    &:visited {
-        color: ${(props) => props.theme.colors.accent};
     }
 `;
 

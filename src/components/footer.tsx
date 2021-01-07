@@ -11,8 +11,7 @@ const FooterContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 14px;
-    margin: 1rem 0;
+    font-size: ${(props) => props.theme.type.scale[6]};
 `;
 
 const SiteLinks = styled.div`
@@ -23,11 +22,12 @@ const SiteLinks = styled.div`
 
     & > a {
         margin-bottom: 0.25rem;
+        width: max-content;
     }
 
     @media (min-width: 600px) {
         & > a:nth-of-type(2n) {
-            flex-basis: 50%;
+            margin-bottom: 35%;
         }
     }
 `;

@@ -51,26 +51,31 @@ export const GlobalStyles: React.FC = () => {
                     --color-text: ${theme.colors.dark.text};
                 }
 
-                h1 {
-                    font-size: 1.5rem;
-                    border-bottom: 2px dotted var(--color-text);
+                h1,
+                h2,
+                h3,
+                h4,
+                h5 {
                 }
 
+                h1 {
+                    font-size: ${theme.type.scale[2]};
+                }
                 h2 {
-                    font-size: 1rem;
-                    padding: 0 2rem;
-                    /* text-transform: uppercase; */
-                    width: max-content;
-                    color: var(--color-background);
-                    background: var(--color-text);
-                    /* 
-                    ::before {
-                        content: "// ";
-                    } */
+                    font-size: ${theme.type.scale[3]};
+                }
+                h3 {
+                    font-size: ${theme.type.scale[4]};
+                }
+                h4 {
+                    font-size: ${theme.type.scale[5]};
+                }
+                h5 {
+                    font-size: ${theme.type.scale[6]};
                 }
 
                 p {
-                    font-size: 1rem;
+                    font-size: ${theme.type.scale[5]};
                     line-height: 1.75rem;
                 }
 
@@ -79,9 +84,15 @@ export const GlobalStyles: React.FC = () => {
                     text-decoration-thickness: 0.06rem;
                     text-underline-offset: 0.2rem;
 
+                    transition: color ${theme.animations.hover};
+
                     &:hover {
-                        opacity: 0.85;
+                        color: ${theme.colors.accent};
                     }
+                }
+
+                code {
+                    font-family: "Hack", "Courier New", Courier, monospace;
                 }
 
                 ::selection {
