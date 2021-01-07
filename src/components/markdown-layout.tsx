@@ -3,8 +3,9 @@ import { ThemeProvider } from "@emotion/react";
 import styled from "@emotion/styled";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { MDXComponents } from "./mdx-components";
+import { MDXComponents } from "./mdx/";
 import { graphql } from "gatsby";
+// import { useLocation } from "@reach/router";
 import { SEO } from "./seo";
 import { Header } from "./header";
 import { Footer } from "./footer";
@@ -27,6 +28,22 @@ const theme = {
     },
     margins: {
         base: "1rem"
+    },
+    animations: {
+        hover: "100ms ease-in-out"
+    },
+    type: {
+        scale: [
+            "3.052rem",
+            "2.441rem",
+            "1.953rem",
+            "1.563rem",
+            "1.25rem",
+            "1rem",
+            "0.8rem",
+            "0.64rem",
+            "0.512rem"
+        ]
     }
 };
 
@@ -35,7 +52,7 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr minmax(auto, 42rem) 1fr;
     grid-template-rows: 4px 8rem auto 8rem;
-    gap: 2rem ${(props) => props.theme.margins.base};
+    gap: 3rem ${(props) => props.theme.margins.base};
 `;
 
 const Bar = styled.div`
@@ -75,6 +92,8 @@ export const query = graphql`
 
 // Markup
 const MarkdownLayout: React.FC<{ data: Query }> = ({ data }) => {
+    // const { path } = useLocation();
+
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyles />
@@ -101,6 +120,7 @@ const MarkdownLayout: React.FC<{ data: Query }> = ({ data }) => {
                 </Content>
                 <Footer />
             </Grid>
+            {/* {path === "/" && <div>{JSON.stringify(location)}</div>} */}
         </ThemeProvider>
     );
 };

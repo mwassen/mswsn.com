@@ -10,3 +10,9 @@
     src: url("./Manrope-Bold.woff2") format("woff2"),
         url("./Manrope-Bold.woff") format("woff");
 }
+
+@font-face {
+    font-family: "Hack";
+    src: url("./hack-regular.woff2") format("woff2"),
+        url("./hack-regular.woff") format("woff");
+}

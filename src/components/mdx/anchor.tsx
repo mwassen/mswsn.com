@@ -1,5 +1,5 @@
 import React from "react";
-import LaunchSvg from "../assets/svg/launch.svg";
+import LaunchSvg from "../../assets/svg/launch.svg";
 import styled from "@emotion/styled";
 
 const ExternalA = styled.a`
@@ -9,6 +9,7 @@ const ExternalA = styled.a`
         opacity: 1;
 
         svg {
+            fill: ${(props) => props.theme.colors.accent};
             opacity: 1;
         }
     }
@@ -20,11 +21,12 @@ const LaunchIcon = styled(LaunchSvg)`
     display: inline;
     transform: translateY(0.1rem);
     opacity: 0.5;
-    transition: opacity 200ms ease-in-out;
+    transition: opacity ${(props) => props.theme.animations.hover},
+        fill ${(props) => props.theme.animations.hover};
     fill: var(--color-text);
 `;
 
-const ExternalLink: React.FC<{ href: string }> = ({ href, children }) => {
+export const Anchor: React.FC<{ href: string }> = ({ href, children }) => {
     if (href.includes("mswsn.com/") || href[0] === "/") {
         return <a href={href}>{children}</a>;
     }
@@ -34,8 +36,4 @@ const ExternalLink: React.FC<{ href: string }> = ({ href, children }) => {
             <LaunchIcon />
         </ExternalA>
     );
-};
-
-export const MDXComponents = {
-    a: ExternalLink
 };
