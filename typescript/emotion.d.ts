@@ -16,5 +16,11 @@ declare module "@emotion/react" {
         margins: {
             base: string;
         };
+        type: {
+            scale: string[];
+        };
+        animations: {
+            hover: string;
+        };
     }
 }
