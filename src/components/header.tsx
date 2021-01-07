@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 
 // Styles
-const NavBar = styled.div`
+const NavBar = styled.nav`
     grid-column: 2;
     grid-row: 2;
     width: 100%;

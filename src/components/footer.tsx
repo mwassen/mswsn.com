@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import { ModeSwitch } from "./mode-switch";
 
 // Styles
-const FooterContainer = styled.div`
+const FooterContainer = styled.footer`
     grid-column: 2;
     grid-row: 4;
     width: 100%;
