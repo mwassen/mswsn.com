@@ -98,21 +98,28 @@ export const ModeSwitch: React.FC = () => {
         setIsDark(!isDark);
     };
 
+    const showBackground = () => {
+        setBackgroundAnimation({
+            boxShadow: `0 0 0 2px ${theme.colors.accent}77`
+        });
+    };
+    const hideBackground = () => {
+        setBackgroundAnimation({
+            boxShadow: `0 0 0 0px ${theme.colors.accent}77`
+        });
+    };
+
     return (
         <SwitchButton
             onClick={onChange}
-            onMouseDown={() =>
-                setBackgroundAnimation({
-                    boxShadow: `0 0 0 2px ${theme.colors.accent}77`
-                })
-            }
+            onMouseDown={showBackground}
             onMouseUp={() => {
                 setTimeout(() => {
-                    setBackgroundAnimation({
-                        boxShadow: `0 0 0 0px ${theme.colors.accent}77`
-                    });
+                    hideBackground();
                 }, 250);
             }}
+            onFocus={showBackground}
+            onBlur={hideBackground}
             aria-label={isDark ? "Light mode" : "Dark mode"}
         >
             <animated.div css={handleCss} style={handleAnimation} />
