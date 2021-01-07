@@ -1,0 +1,6 @@
+overwrite: true
+schema: "http://localhost:8000/___graphql"
+generates:
+    typescript/gatsby-graphql.d.ts:
+        plugins:
+            - "typescript"

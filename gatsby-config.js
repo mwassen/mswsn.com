@@ -86,12 +86,12 @@ module.exports = {
         },
         "gatsby-plugin-catch-links",
         "gatsby-plugin-mdx-embed",
-        {
-            resolve: "gatsby-plugin-graphql-codegen",
-            options: {
-                fileName: "./typescript/gatsby-graphql.d.ts"
-            }
-        },
+        // {
+        //     resolve: "gatsby-plugin-graphql-codegen",
+        //     options: {
+        //         fileName: "./typescript/gatsby-graphql.d.ts"
+        //     }
+        // },
 
         // Transformers
         "gatsby-transformer-sharp",
