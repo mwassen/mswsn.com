@@ -84,6 +84,7 @@ module.exports = {
                 }
             }
         },
+        "gatsby-plugin-preload-fonts",
         "gatsby-plugin-catch-links",
         "gatsby-plugin-mdx-embed",
         // {
