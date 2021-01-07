@@ -6,7 +6,7 @@ import { materialDarkTheme } from "../../helpers/material-dark-theme";
 const Pre = styled.pre`
     max-width: calc(100vw - 2rem);
     font-family: "Hack", "Courier New", Courier, monospace;
-    font-size: ${(props) => props.theme.type.scale[6]};
+    font-size: 0.8em;
     border-radius: 0.25rem;
     text-align: left;
     margin: 1rem 0;
