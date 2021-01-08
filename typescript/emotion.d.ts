@@ -21,6 +21,7 @@ declare module "@emotion/react" {
         };
         animations: {
             hover: string;
+            background: string;
         };
     }
 }

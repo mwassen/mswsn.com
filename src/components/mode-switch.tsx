@@ -68,7 +68,7 @@ export const ModeSwitch: React.FC = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            document.body.style.transition = `background-color 600ms cubic-bezier(0.2, 0.8, 0.2, 1), color ${theme.animations.hover}`;
+            document.body.style.transition = `background-color ${theme.animations.background}, color ${theme.animations.hover}`;
         }, 0);
     }, []);
 
