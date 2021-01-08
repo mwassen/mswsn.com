@@ -10,7 +10,7 @@ const Container = styled.div`
     &::before {
         content: "";
         border: solid;
-        border-width: 1.15px 0 0 0;
+        border-width: 0.08rem 0 0 0;
         border-color: var(--color-text);
         transition: border-color ${(props) => props.theme.animations.hover};
         height: 0.25rem;
