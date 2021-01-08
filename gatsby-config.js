@@ -86,7 +86,7 @@ module.exports = {
         },
         "gatsby-plugin-preload-fonts",
         "gatsby-plugin-catch-links",
-        "gatsby-plugin-mdx-embed",
+        // "gatsby-plugin-mdx-embed",
         // {
         //     resolve: "gatsby-plugin-graphql-codegen",
         //     options: {
