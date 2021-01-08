@@ -4,6 +4,10 @@
     "private": true,
     "description": "mswsn.com",
     "author": "Marcus Wassén",
+    "browserslist": [
+        "last 1 version",
+        "> 2%"
+    ],
     "scripts": {
         "develop": "gatsby develop",
         "start": "gatsby develop",
