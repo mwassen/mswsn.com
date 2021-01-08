@@ -30,7 +30,8 @@ const theme = {
         base: "1rem"
     },
     animations: {
-        hover: "100ms ease-in-out"
+        hover: "100ms ease-in-out",
+        background: "600ms cubic-bezier(0.2, 0.8, 0.2, 1)"
     },
     type: {
         scale: [
@@ -50,7 +51,7 @@ const theme = {
 const Grid = styled.div`
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr minmax(auto, 42rem) 1fr;
+    grid-template-columns: 1fr minmax(auto, 42rem) 1.618fr;
     grid-template-rows: 4px 8rem auto 8rem;
     gap: 3rem ${(props) => props.theme.margins.base};
 `;
