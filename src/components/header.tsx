@@ -62,16 +62,14 @@ const TopLink = styled(Link)`
 `;
 
 // Markup
-export const Header: React.FC = () => {
-    return (
-        <NavBar>
-            <Home to="/" aria-label="Home">
-                <Logo />
-            </Home>
-            <Links>
-                <TopLink to="/blog">Blog</TopLink>
-                <TopLink to="/projects">Projects</TopLink>
-            </Links>
-        </NavBar>
-    );
-};
+export const Header: React.FC = () => (
+    <NavBar>
+        <Home to="/" aria-label="Home">
+            <Logo />
+        </Home>
+        <Links>
+            <TopLink to="/blog">Blog</TopLink>
+            <TopLink to="/projects">Projects</TopLink>
+        </Links>
+    </NavBar>
+);

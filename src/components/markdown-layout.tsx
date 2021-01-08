@@ -91,38 +91,31 @@ export const query = graphql`
 `;
 
 // Markup
-const MarkdownLayout: React.FC<{ data: Query }> = ({ data }) => {
-    // const { path } = useLocation();
-
-    return (
-        <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            <SEO
-                title={data.mdx?.frontmatter?.title}
-                description={data.mdx?.frontmatter?.description}
-                image={data.mdx?.frontmatter?.image}
-            />
-            <Grid>
-                <Bar />
-                <Header />
-                <Content>
-                    {data.mdx?.body && (
-                        <MDXProvider components={MDXComponents}>
-                            <MDXRenderer>{data.mdx.body}</MDXRenderer>
-                        </MDXProvider>
+const MarkdownLayout: React.FC<{ data: Query }> = ({ data }) => (
+    <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <SEO
+            title={data.mdx?.frontmatter?.title}
+            description={data.mdx?.frontmatter?.description}
+            image={data.mdx?.frontmatter?.image}
+        />
+        <Grid>
+            <Bar />
+            <Header />
+            <Content>
+                {data.mdx?.body && (
+                    <MDXProvider components={MDXComponents}>
+                        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+                    </MDXProvider>
+                )}
+                {data.mdx?.inboundReferences &&
+                    data.mdx.inboundReferences.length > 0 && (
+                        <Backlinks references={data.mdx.inboundReferences} />
                     )}
-                    {data.mdx?.inboundReferences &&
-                        data.mdx.inboundReferences.length > 0 && (
-                            <Backlinks
-                                references={data.mdx.inboundReferences}
-                            />
-                        )}
-                </Content>
-                <Footer />
-            </Grid>
-            {/* {path === "/" && <div>{JSON.stringify(location)}</div>} */}
-        </ThemeProvider>
-    );
-};
+            </Content>
+            <Footer />
+        </Grid>
+    </ThemeProvider>
+);
 
 export default MarkdownLayout;

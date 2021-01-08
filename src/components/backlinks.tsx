@@ -25,16 +25,14 @@ const Container = styled.div`
     }
 `;
 
-export const Backlinks: React.FC<{ references: Mdx[] }> = ({ references }) => {
-    return (
-        <Container>
-            <p>Referenced in: </p>
-            {references.map((link, ind) => (
-                <div key={`backlink-${ind}`}>
-                    <Link to={`/${link.slug}`}>{link.frontmatter?.title}</Link>
-                    {ind + 1 < references.length ? "," : "."}
-                </div>
-            ))}
-        </Container>
-    );
-};
+export const Backlinks: React.FC<{ references: Mdx[] }> = ({ references }) => (
+    <Container>
+        <p>Referenced in: </p>
+        {references.map((link, ind) => (
+            <div key={`backlink-${ind}`}>
+                <Link to={`/${link.slug}`}>{link.frontmatter?.title}</Link>
+                {ind + 1 < references.length ? "," : "."}
+            </div>
+        ))}
+    </Container>
+);
