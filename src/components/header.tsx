@@ -35,7 +35,6 @@ const Logo = styled(LogoSvg)`
     fill: var(--color-text);
     transition: fill ${(props) => props.theme.animations.hover};
     height: ${(props) => props.theme.type.scale[3]};
-    margin-bottom: ${(props) => props.theme.margins.base};
 `;
 
 const Links = styled.div`
