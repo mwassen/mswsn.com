@@ -15,10 +15,9 @@ const FooterContainer = styled.footer`
 `;
 
 const SiteLinks = styled.div`
-    width: 35%;
+    width: 38.2%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
 
     & > a {
         margin-bottom: 0.25rem;
@@ -26,9 +25,19 @@ const SiteLinks = styled.div`
     }
 
     @media (min-width: 600px) {
-        & > a:nth-of-type(2n) {
-            margin-bottom: 35%;
-        }
+        flex-direction: row;
+    }
+`;
+
+const LinkGroup = styled.div`
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    & > a {
+        margin-bottom: 0.25rem;
+        width: max-content;
+        white-space: nowrap;
     }
 `;
 
@@ -56,10 +65,14 @@ export const Footer: React.FC = () => {
     return (
         <FooterContainer>
             <SiteLinks>
-                <Link to="/">Home</Link>
-                <Link to="/projects">Projects</Link>
-                <Link to="/about-me">About me</Link>
-                <Link to="/site-info">Site info</Link>
+                <LinkGroup>
+                    <Link to="/">Home</Link>
+                    <Link to="/projects">Projects</Link>
+                </LinkGroup>
+                <LinkGroup>
+                    <Link to="/about-me">About me</Link>
+                    <Link to="/site-info">Site info</Link>
+                </LinkGroup>
             </SiteLinks>
             <Contacts>
                 <Disclaimer>
