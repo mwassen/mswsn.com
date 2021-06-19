@@ -27,7 +27,6 @@
         "gatsby-image": "^2.8.0",
         "gatsby-plugin-catch-links": "^2.7.0",
         "gatsby-plugin-emotion": "^5.1.0",
-        "gatsby-plugin-google-analytics": "^2.8.0",
         "gatsby-plugin-manifest": "^2.9.1",
         "gatsby-plugin-mdx": "^1.7.1",
         "gatsby-plugin-mdx-embed": "0.0.17",
