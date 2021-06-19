@@ -41,6 +41,7 @@
         "gatsby-transformer-markdown-references": "^0.1.5",
         "gatsby-transformer-sharp": "^2.9.0",
         "mdx-embed": "0.0.17",
+        "ogl": "^0.0.73",
         "prism-react-renderer": "^1.1.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
@@ -78,6 +79,7 @@
         "*.mdx": "prettier --write"
     },
     "volta": {
-        "node": "14.15.3"
+        "node": "14.17.1",
+        "npm": "7.18.1"
     }
 }
