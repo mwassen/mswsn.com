@@ -23,6 +23,7 @@ export const GlobalStyles: React.FC = () => {
                     transition: none;
                     color: var(--color-text);
                     font-family: "Manrope", Helvetica, Arial, sans-serif;
+                    overflow-y: scroll;
                 }
 
                 *,
