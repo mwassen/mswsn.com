@@ -37,28 +37,28 @@ const Logo = styled(LogoSvg)`
     height: ${(props) => props.theme.type.scale[3]};
 `;
 
-const Links = styled.div`
-    display: none;
-    flex-direction: row;
+// const Links = styled.div`
+//     display: none;
+//     flex-direction: row;
 
-    @media (min-width: 600px) {
-        display: flex;
-    }
-`;
+//     @media (min-width: 600px) {
+//         display: flex;
+//     }
+// `;
 
-const TopLink = styled(Link)`
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: ${(props) => props.theme.type.scale[6]};
-    font-weight: bold;
-    letter-spacing: 1.8px;
-    margin: 0 ${(props) => props.theme.margins.base} 0 0;
-    user-select: none;
+// const TopLink = styled(Link)`
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     font-size: ${(props) => props.theme.type.scale[6]};
+//     font-weight: bold;
+//     letter-spacing: 1.8px;
+//     margin: 0 ${(props) => props.theme.margins.base} 0 0;
+//     user-select: none;
 
-    @media (min-width: 600px) {
-        margin: 0 0 0 ${(props) => props.theme.margins.base};
-    }
-`;
+//     @media (min-width: 600px) {
+//         margin: 0 0 0 ${(props) => props.theme.margins.base};
+//     }
+// `;
 
 // Markup
 export const Header: React.FC = () => (
@@ -66,9 +66,9 @@ export const Header: React.FC = () => (
         <Home to="/" aria-label="Home">
             <Logo />
         </Home>
-        <Links>
+        {/* <Links>
             <TopLink to="/blog">Blog</TopLink>
             <TopLink to="/projects">Projects</TopLink>
-        </Links>
+        </Links> */}
     </NavBar>
 );
