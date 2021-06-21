@@ -32,7 +32,7 @@ const LineContent = styled.span`
 
 export const CodeBlock: React.FC<{ className?: string; children: string }> = ({
     className = "language-javascript",
-    children
+    children,
 }) => {
     const language = className.replace(/language-/, "") as Language;
     const activateLines = 24;

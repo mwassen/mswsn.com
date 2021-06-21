@@ -17,14 +17,14 @@ export const SEO: React.FC<{
         defaultDescription,
         siteUrl,
         defaultImage,
-        twitterUsername
+        twitterUsername,
     } = site.siteMetadata;
 
     const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
         image: `${siteUrl}${image || defaultImage}`,
-        url: `${siteUrl}${pathname}`
+        url: `${siteUrl}${pathname}`,
     };
 
     return (

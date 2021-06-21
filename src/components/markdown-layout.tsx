@@ -19,19 +19,19 @@ const theme = {
         accent: "#e36414",
         light: {
             background: "#f2f2f2",
-            text: "#333"
+            text: "#333",
         },
         dark: {
             background: "#121212",
-            text: "#fafafa"
-        }
+            text: "#fafafa",
+        },
     },
     margins: {
-        base: "1rem"
+        base: "1rem",
     },
     animations: {
         hover: "100ms ease-in-out",
-        background: "600ms cubic-bezier(0.2, 0.8, 0.2, 1)"
+        background: "600ms cubic-bezier(0.2, 0.8, 0.2, 1)",
     },
     type: {
         scale: [
@@ -43,9 +43,9 @@ const theme = {
             "1rem",
             "0.8rem",
             "0.64rem",
-            "0.512rem"
-        ]
-    }
+            "0.512rem",
+        ],
+    },
 };
 
 const Grid = styled.div`

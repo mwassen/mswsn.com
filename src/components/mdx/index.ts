@@ -5,5 +5,5 @@ import { HorizontalLine } from "./horizonal-line";
 export const MDXComponents = {
     a: Anchor,
     code: CodeBlock,
-    hr: HorizontalLine
+    hr: HorizontalLine,
 };

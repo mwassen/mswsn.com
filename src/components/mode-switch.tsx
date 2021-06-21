@@ -75,22 +75,22 @@ export const ModeSwitch: React.FC = () => {
     // Animations
     const handleAnimation = useSpring({
         left: isDark ? "18px" : "2px",
-        config: { mass: 10, tension: 400, friction: 10, clamp: true }
+        config: { mass: 10, tension: 400, friction: 10, clamp: true },
     });
     const uncheckedAnimation = useSpring({
         position: "absolute",
         opacity: isDark ? 1 : 0,
         left: isDark ? "3px" : "10px",
-        fill: isDark ? theme.colors.dark.background : theme.colors.light.text
+        fill: isDark ? theme.colors.dark.background : theme.colors.light.text,
     });
     const checkedAnimation = useSpring({
         position: "absolute",
         opacity: !isDark ? 1 : 0,
         left: !isDark ? "17px" : "10px",
-        fill: isDark ? theme.colors.dark.text : theme.colors.light.background
+        fill: isDark ? theme.colors.dark.text : theme.colors.light.background,
     });
     const [backgroundAnimation, setBackgroundAnimation] = useSpring(() => ({
-        boxShadow: `0 0 0 0px ${theme.colors.accent}77`
+        boxShadow: `0 0 0 0px ${theme.colors.accent}77`,
     }));
 
     const onChange = () => {
@@ -100,12 +100,12 @@ export const ModeSwitch: React.FC = () => {
 
     const showBackground = () => {
         setBackgroundAnimation({
-            boxShadow: `0 0 0 2px ${theme.colors.accent}77`
+            boxShadow: `0 0 0 2px ${theme.colors.accent}77`,
         });
     };
     const hideBackground = () => {
         setBackgroundAnimation({
-            boxShadow: `0 0 0 0px ${theme.colors.accent}77`
+            boxShadow: `0 0 0 0px ${theme.colors.accent}77`,
         });
     };
 

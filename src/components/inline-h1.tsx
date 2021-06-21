@@ -17,7 +17,7 @@ const InlineHeader = styled.h1<InlineHeaderProps>`
 export const InlineH1: React.FC<InlineHeaderProps> = ({
     children,
     bold,
-    size
+    size,
 }) => (
     <InlineHeader bold={bold} size={size}>
         {children}
