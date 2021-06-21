@@ -17,7 +17,8 @@
         "clean": "gatsby clean",
         "generate": "graphql-codegen --config codegen.yml",
         "preload-fonts": "gatsby-preload-fonts",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "prettify": "prettier -w src"
     },
     "dependencies": {
         "@emotion/react": "^11.4.0",
