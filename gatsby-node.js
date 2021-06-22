@@ -2,7 +2,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions;
 
     const markdownTemplate = require.resolve(
-        `${__dirname}/src/components/markdown-layout.tsx`
+        `${__dirname}/src/components/layout.tsx`
     );
 
     const result = await graphql(`
@@ -32,8 +32,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                 component: markdownTemplate,
                 context: {
                     id: node.childMdx.id,
-                    slug: node.childMdx.slug
-                }
+                    slug: node.childMdx.slug,
+                },
             });
         }
     });
